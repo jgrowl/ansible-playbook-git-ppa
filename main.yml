@@ -1,0 +1,11 @@
+- hosts:
+    - git-ppa 
+
+  user: root
+  #sudo: true
+  
+  roles:
+    - ppa-dep
+
+  tasks:
+    - include: tasks/main.yml

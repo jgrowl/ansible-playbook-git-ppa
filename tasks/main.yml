@@ -1,0 +1,8 @@
+- name: Add git ppa key 
+  action: apt_repository repo=ppa:git-core/ppa state=present
+  notify: update apt-cache
+
+- name: install git via ppa
+  action: apt pkg=$item state=installed update_cache=yes
+  with_items:
+    - git 
