@@ -1,11 +1,10 @@
-- hosts:
-    - git-ppa 
-
-  user: root
-  #sudo: true
-  
+- hosts: git-ppa 
+  vars_files:
+    - vars/main.yml
+  user: $global_user
+  sudo: $global_use_sudo
+  sudo_user: $global_sudo_user
   roles:
     - ppa-dep
-
   tasks:
     - include: tasks/main.yml
